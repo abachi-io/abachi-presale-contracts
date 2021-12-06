@@ -58,7 +58,7 @@ cp .env.example .env
 | AbachiAuthority   | [0x66E67C8222309b5751201DB135fa67F09b2dbB63](https://mumbai.polygonscan.com/address/0x66E67C8222309b5751201DB135fa67F09b2dbB63)  |
 | Abachi            | [0x60aB0c3967aF21328fAeD1d424b7A78BfbcF76f3](https://mumbai.polygonscan.com/address/0x60aB0c3967aF21328fAeD1d424b7A78BfbcF76f3)  |
 | aAbachi           | [0xCb51312312D642844500c35df6890488b7626df6](https://mumbai.polygonscan.com/address/0xCb51312312D642844500c35df6890488b7626df6)  |
-| presaleAbachi     | [0xE29D399E6477E28e37E9c24764b72f2A87E96238](https://mumbai.polygonscan.com/address/0x89C5BF08342543Ef2514147a080B781A93dCD4bb)  |
+| presaleAbachi     | [0x43CB7703800b82A1810170c5Be45d6b0E53dfc4E](https://mumbai.polygonscan.com/address/0x43CB7703800b82A1810170c5Be45d6b0E53dfc4E)  |
 
 ## Contribution
 
