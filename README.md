@@ -17,7 +17,7 @@
 ```
 git clone https://github.com/abachi-io/abachi-presale-contracts.git
 
-cd abachiContracts
+cd abachi-presale-contracts
 
 npm i
 
