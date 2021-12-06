@@ -1,0 +1,7 @@
+node_modules/
+artifacts/
+cache/
+.env
+.DS
+*.log
+package-lock.json
