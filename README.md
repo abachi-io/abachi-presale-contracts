@@ -69,6 +69,7 @@ If you'd like to contribute to Abachi, please fork, fix, commit and send a pull 
 Please make sure your contributions adhere to our coding guidelines:
 
 * Pull requests need to be based on and opened against the master branch.
+* Pull request should have a detailed explanation about the enhancement or fix
 * Commit messages should be prefixed with the file they modify.
 
-Please see the [Frist Contributer's Guide](documentation/CONTRIBUTE.md) for more details on how to configure your git environment.
+Please see the [First Contributer's Guide](documentation/CONTRIBUTE.md) for more details on how to configure your git environment.
