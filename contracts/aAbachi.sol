@@ -6,7 +6,7 @@ import "./ERC20Permit.sol";
 import "./Policy.sol";
 
 contract PresaleOwned is Policy {
-    
+
   address internal _presale;
 
   function setPresale( address presale_ ) external onlyPolicy() returns ( bool ) {
@@ -36,12 +36,31 @@ contract aAbachi is ERC20Permit, PresaleOwned {
 
   using SafeMath for uint256;
 
+    address public owner = msg.sender;
+    bool public hasMintedAuction = false;
+    uint256 public auctionMintAmount = 167500 * 10**9;
+    uint256 public maxMint = 192500 * 10**9;
+
     constructor()
     ERC20("Alpha Abachi", "aABI", 9)
     ERC20Permit("Alpha Abachi"){}
 
+
+    modifier onlyOwner() {
+       require(owner == msg.sender, "Not allowed");
+      _;
+    }
+
     function mint(address account_, uint256 amount_) external onlyPresale() {
+        require(totalSupply() + amount_ < maxMint, 'Exceeds maximum allowed tokens to be minted');
         _mint(account_, amount_);
+    }
+
+    function mintAuction() external onlyOwner {
+        require(!hasMintedAuction, 'Already minted');
+        require(totalSupply() + auctionMintAmount < maxMint, 'Exceeds maximum allowed tokens to be minted');
+        hasMintedAuction = true;
+        _mint(owner, auctionMintAmount);
     }
 
     /**
@@ -64,7 +83,7 @@ contract aAbachi is ERC20Permit, PresaleOwned {
      * - the caller must have allowance for ``accounts``'s tokens of at least
      * `amount`.
      */
-     
+
     function burnFrom(address account_, uint256 amount_) public virtual {
         _burnFrom(account_, amount_);
     }
