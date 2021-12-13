@@ -39,6 +39,11 @@ cp .env.example .env
 
 `npx hardhat verify --network [NETWORK] [CONTRACT ADDRESS] [CONSTRUCTOR PARAM 1] [CONSTRUCTOR PARAM 2]`
 
+#### Test contracts
+`npx hardhat test`
+
+* To test using a local chain, add a comma separated list of private keys from the local rpc server
+* Update default network in hardhat config file to `localhost`
 
 ## Contracts
 
@@ -73,3 +78,6 @@ Please make sure your contributions adhere to our coding guidelines:
 * Commit messages should be prefixed with the file they modify.
 
 Please see the [First Contributer's Guide](documentation/CONTRIBUTE.md) for more details on how to configure your git environment.
+
+
+
