@@ -1,10 +1,11 @@
-require("dotenv").config()
+require("dotenv").config();
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
+require("solidity-coverage");
 
 module.exports = {
   solidity: "0.7.5",
-  // defaultNetwork: "localhost",
+  // defaultNetwork: "mumbai",
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY
   },

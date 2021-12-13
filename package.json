@@ -22,14 +22,16 @@
     "prettier": "^2.3.2",
     "prettier-plugin-solidity": "^1.0.0-beta.17",
     "solhint": "^3.3.6",
-    "solhint-plugin-prettier": "0.0.5"
+    "solhint-plugin-prettier": "0.0.5",
+    "solidity-coverage": "^0.7.17"
   },
   "scripts": {
     "test": "npx hardhat test",
     "compile": "npx hardhat compile",
     "clean": "npx hardhat clean",
     "start": "npx hardhat run scripts/deployAll.js",
-    "lint:sol": "solhint -f table contracts/**/*.sol"
+    "lint:sol": "solhint -f table contracts/**/*.sol",
+    "coverage": "npx hardhat coverage"
   },
   "repository": {
     "type": "git",

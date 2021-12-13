@@ -5,3 +5,4 @@ cache/
 .DS
 *.log
 package-lock.json
+coverage*

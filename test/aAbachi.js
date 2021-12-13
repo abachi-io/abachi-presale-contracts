@@ -17,6 +17,7 @@ describe("aAbachi token", () => {
     
   });
 
+  
   it("Tokens for auction should be credited to owner", async () => {    
 
     let ownerBalance = await aAbachi.balanceOf(owner.address);
@@ -24,7 +25,14 @@ describe("aAbachi token", () => {
 
     ownerBalance = await aAbachi.balanceOf(owner.address);    
     expect(await aAbachi.totalSupply()).to.equal(ownerBalance);
-    expect(await aAbachi.totalSupply()).to.equal(BigInt("167500000000000"));
+    expect(await aAbachi.totalSupply()).to.equal(BigInt(142500 * 1e9));
+  });
+
+  it("Tokens for auction should be able to minted to max limit", async () => {
+    await aAbachi.setPresale(owner.address);
+    
+    await aAbachi.mint(address, BigInt(50000 * 10**9)); // max supply available for whitelist
+    await expect(aAbachi.mintAuction()).to.be.fulfilled;
   });
 
   it("Tokens for auction should not be minted twice", async () => {    
@@ -38,7 +46,7 @@ describe("aAbachi token", () => {
   });
 
   it("Owner should be able to mint whitelist aAbachi token with presale", async () => {    
-    await aAbachi.setPresale(await owner.getAddress());
+    await aAbachi.setPresale(owner.address);
     await aAbachi.mint(address, 100);
     expect(await aAbachi.balanceOf(address)).to.equal(BigInt(100));
   });
@@ -47,7 +55,7 @@ describe("aAbachi token", () => {
     await aAbachi.pushPolicy(address);
 
     await aAbachi.connect(newOwner).pullPolicy();
-    await aAbachi.connect(newOwner).setPresale(await newOwner.getAddress());
+    await aAbachi.connect(newOwner).setPresale(newOwner.address);
 
     await expect(aAbachi.mint(address, 100)).to.be.rejected; //reject if minted by old owner
     
@@ -55,21 +63,33 @@ describe("aAbachi token", () => {
     expect(await aAbachi.balanceOf(address)).to.equal(BigInt(100));    
   });
 
-  it("should not allow minting after renounce", async () => {
+  it("should not be able to set presale address after renounce", async () => {
     await aAbachi.renouncePolicy();
-    await expect(aAbachi.setPresale(await owner.getAddress())).to.be.rejected;
+    await expect(aAbachi.setPresale(owner.address)).to.be.rejected;
   });
 
   it("should not mint beyond max supply", async () => {    
-    await aAbachi.setPresale(await owner.getAddress());
+    await aAbachi.setPresale(owner.address);
     await expect(aAbachi.mint(address, BigInt(192500 * 10**9 + 1))).to.be.rejected;
     await expect(aAbachi.mint(address, BigInt(192500 * 10**9))).not.to.be.rejected;
   });
 
   it("should not mint auction tokens beyond max supply", async () => {    
-    await aAbachi.setPresale(await owner.getAddress());
-    await aAbachi.mint(address, BigInt(25000 * 10**9 + 1)); // max supply available for whitelist
+    await aAbachi.setPresale(owner.address);
+    await aAbachi.mint(address, BigInt(50000 * 10**9 + 1)); // max supply available for whitelist
     await expect(aAbachi.mintAuction()).to.be.rejected;
+  });
+
+  it("should burn tokens", async () => {    
+
+    await aAbachi.setPresale(owner.address);
+    await aAbachi.mint(owner.address, BigInt(100));
+
+    expect(await aAbachi.balanceOf(owner.address)).to.equal(BigInt(100));
+
+    await aAbachi.burn(BigInt(50));
+
+    expect(await aAbachi.balanceOf(owner.address)).to.equal(BigInt(50));
   });
 });
 
