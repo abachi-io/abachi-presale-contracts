@@ -38,7 +38,7 @@ contract aAbachi is ERC20Permit, PresaleOwned {
 
     address public owner = msg.sender;
     bool public hasMintedAuction = false;
-    uint256 public auctionMintAmount = 167500 * 10**9;
+    uint256 public auctionMintAmount = 142500 * 10**9;
     uint256 public maxMint = 192500 * 10**9;
 
     constructor()
