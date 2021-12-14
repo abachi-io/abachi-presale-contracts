@@ -105,7 +105,7 @@ describe("aAbachi token", () => {
     expect(await aAbachi.balanceOf(owner.address)).to.equal(BigInt(50));
   });
 
-  it("should be able burn allowed tokens", async () => {
+  it("should be able to burn allowed tokens", async () => {
 
     await aAbachi.setPresale(owner.address);
     await aAbachi.mint(newOwner.address, BigInt(100));
@@ -117,7 +117,7 @@ describe("aAbachi token", () => {
     expect(await aAbachi.balanceOf(newOwner.address)).to.equal(BigInt(50));
   });
 
-  it("should not be able burn more than allowed tokens", async () => {
+  it("should not be able to burn more than allowed tokens", async () => {
 
     await aAbachi.setPresale(owner.address);
     await aAbachi.mint(newOwner.address, BigInt(100));
@@ -129,7 +129,7 @@ describe("aAbachi token", () => {
     expect(await aAbachi.balanceOf(newOwner.address)).to.equal(BigInt(100));
   });
 
-  it("should not be able burn if not approved", async () => {
+  it("should not be able to burn if not approved", async () => {
 
     await aAbachi.setPresale(owner.address);
     await aAbachi.mint(newOwner.address, BigInt(100));   
