@@ -10,6 +10,7 @@ contract PresaleOwned is Policy {
   address internal _presale;
 
   function setPresale( address presale_ ) external onlyPolicy() returns ( bool ) {
+    require(_presale == address(0), "presale already set");
     _presale = presale_;
     return true;
   }
