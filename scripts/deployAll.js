@@ -53,6 +53,7 @@ async function main() {
     console.log( "aAbachi: " + aabi.address);
     // console.log( "Abachi: " + abi.address);
     console.log( "PresaleAbachi: " + presaleAbachi.address);
+    console.log( "Dai: " + dai.address);
 }
 
 main()
