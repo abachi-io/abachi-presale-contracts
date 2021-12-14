@@ -1,12 +1,12 @@
 const { ethers } = require("hardhat");
 
-const governor = { address: '0xA805fEDb79c9cAd5857623ae73f9fCfD973eC474'} // required
-const guardian  = { address: '0xA805fEDb79c9cAd5857623ae73f9fCfD973eC474'} // required
-const policy = { address: '0xA805fEDb79c9cAd5857623ae73f9fCfD973eC474'} // required
+const governor = { address: '0x0000000000f1d80C6D27fB1b2faC8BF6E769f0B5'} // required
+const guardian  = { address: '0x0000000000f1d80C6D27fB1b2faC8BF6E769f0B5'} // required
+const policy = { address: '0x0000000000f1d80C6D27fB1b2faC8BF6E769f0B5'} // required
 const vault = { address: '0x0000000000000000000000000000000000000000'} // set later
 
-const dai = { address: '0x89bF27B58b18334116949539d220FF28B240EA54'} // required
-const daoTreasury = { address: '0xA805fEDb79c9cAd5857623ae73f9fCfD973eC474'} // required
+const dai = { address: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063'} // required
+const daoTreasury = { address: '0x4f33Ff9A7910d04c7FC77563090ae106899988Aa'} // required
 
 async function main() {
 
