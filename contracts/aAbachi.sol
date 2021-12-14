@@ -52,13 +52,13 @@ contract aAbachi is ERC20Permit, PresaleOwned {
     }
 
     function mint(address account_, uint256 amount_) external onlyPresale() {
-        require(totalSupply().add(amount_) < maxMint, 'Exceeds maximum allowed tokens to be minted');
+        require(totalSupply().add(amount_) <= maxMint, 'Exceeds maximum allowed tokens to be minted');
         _mint(account_, amount_);
     }
 
     function mintAuction() external onlyOwner {
         require(!hasMintedAuction, 'Already minted');
-        require(totalSupply().add(auctionMintAmount) < maxMint, 'Exceeds maximum allowed tokens to be minted');
+        require(totalSupply().add(auctionMintAmount) <= maxMint, 'Exceeds maximum allowed tokens to be minted');
         hasMintedAuction = true;
         _mint(owner, auctionMintAmount);
     }
