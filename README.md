@@ -51,19 +51,9 @@ cp .env.example .env
 
 |       Contract    | Address |
 |     ------------- | ------------- |
-| AbachiAuthority   | TBA  |
-| Abachi            | TBA  |
-| aAbachi           | TBA  |
-| presaleAbachi     | TBA  |
-
-#### Matic Testnet (Mumbai)
-
-|       Contract    | Address |
-|     ------------- | ------------- |
-| AbachiAuthority   | [0x66E67C8222309b5751201DB135fa67F09b2dbB63](https://mumbai.polygonscan.com/address/0x66E67C8222309b5751201DB135fa67F09b2dbB63)  |
-| Abachi            | [0x60aB0c3967aF21328fAeD1d424b7A78BfbcF76f3](https://mumbai.polygonscan.com/address/0x60aB0c3967aF21328fAeD1d424b7A78BfbcF76f3)  |
-| aAbachi           | [0xCb51312312D642844500c35df6890488b7626df6](https://mumbai.polygonscan.com/address/0xCb51312312D642844500c35df6890488b7626df6)  |
-| presaleAbachi     | [0x43CB7703800b82A1810170c5Be45d6b0E53dfc4E](https://mumbai.polygonscan.com/address/0x43CB7703800b82A1810170c5Be45d6b0E53dfc4E)  |
+| aAbachi           | [0xcC649F54645f09751b3f3E7BeF57aBfD6A8885dc](https://polygonscan.com/address/0xcC649F54645f09751b3f3E7BeF57aBfD6A8885dc)   |
+| presaleAbachi     | [0x860AB14370f3a99C6d7F834bdc99D5a117489f96](https://polygonscan.com/address/0x860AB14370f3a99C6d7F834bdc99D5a117489f96)  |
+| DAI               | [0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063](https://polygonscan.com/address/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063)  |
 
 ## Contribution
 
@@ -78,6 +68,3 @@ Please make sure your contributions adhere to our coding guidelines:
 * Commit messages should be prefixed with the file they modify.
 
 Please see the [First Contributer's Guide](documentation/CONTRIBUTE.md) for more details on how to configure your git environment.
-
-
-
