@@ -51,8 +51,8 @@ cp .env.example .env
 
 |       Contract    | Address |
 |     ------------- | ------------- |
-| aAbachi           | [0xcC649F54645f09751b3f3E7BeF57aBfD6A8885dc](https://polygonscan.com/address/0xcC649F54645f09751b3f3E7BeF57aBfD6A8885dc)   |
-| presaleAbachi     | [0x860AB14370f3a99C6d7F834bdc99D5a117489f96](https://polygonscan.com/address/0x860AB14370f3a99C6d7F834bdc99D5a117489f96)  |
+| aAbachi           | [0x835BA011Ec70e695879185dF3d46939DBfBeF7E5](https://polygonscan.com/address/0x835BA011Ec70e695879185dF3d46939DBfBeF7E5)   |
+| presaleAbachi     | [0x62Fb6F77cebc8500448FbFB8D4F875f01d01531d](https://polygonscan.com/address/0x62Fb6F77cebc8500448FbFB8D4F875f01d01531d)  |
 | DAI               | [0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063](https://polygonscan.com/address/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063)  |
 
 ## Contribution
