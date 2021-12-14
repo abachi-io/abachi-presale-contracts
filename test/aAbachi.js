@@ -91,5 +91,51 @@ describe("aAbachi token", () => {
 
     expect(await aAbachi.balanceOf(owner.address)).to.equal(BigInt(50));
   });
+
+
+  it("should burn tokens", async () => {    
+
+    await aAbachi.setPresale(owner.address);
+    await aAbachi.mint(owner.address, BigInt(100));
+
+    expect(await aAbachi.balanceOf(owner.address)).to.equal(BigInt(100));
+
+    await aAbachi.burn(BigInt(50));
+
+    expect(await aAbachi.balanceOf(owner.address)).to.equal(BigInt(50));
+  });
+
+  it("should be able to burn allowed tokens", async () => {
+
+    await aAbachi.setPresale(owner.address);
+    await aAbachi.mint(newOwner.address, BigInt(100));
+
+    expect(await aAbachi.balanceOf(newOwner.address)).to.equal(BigInt(100));
+    
+    await aAbachi.connect(newOwner).approve(owner.address, BigInt(50));
+    await aAbachi.burnFrom(newOwner.address, BigInt(50));
+    expect(await aAbachi.balanceOf(newOwner.address)).to.equal(BigInt(50));
+  });
+
+  it("should not be able to burn more than allowed tokens", async () => {
+
+    await aAbachi.setPresale(owner.address);
+    await aAbachi.mint(newOwner.address, BigInt(100));
+
+    expect(await aAbachi.balanceOf(newOwner.address)).to.equal(BigInt(100));
+    
+    await aAbachi.connect(newOwner).approve(owner.address, BigInt(50));
+    await expect(aAbachi.burnFrom(newOwner.address, BigInt(51))).to.be.rejectedWith("ERC20: burn amount exceeds allowance");
+    expect(await aAbachi.balanceOf(newOwner.address)).to.equal(BigInt(100));
+  });
+
+  it("should not be able to burn if not approved", async () => {
+
+    await aAbachi.setPresale(owner.address);
+    await aAbachi.mint(newOwner.address, BigInt(100));   
+    
+    await expect(aAbachi.burnFrom(newOwner.address, BigInt(50))).to.been.rejectedWith("ERC20: burn amount exceeds allowance");
+    expect(await aAbachi.allowance(newOwner.address, owner.address)).to.equal(0);
+  });
 });
 
