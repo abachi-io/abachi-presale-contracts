@@ -17,6 +17,9 @@ contract AbachiBridge is Ownable {
     IERC20 public ABI;
     bool public paused = false;
 
+    event Swap(address _recipient, uint256 _amount);
+
+
     /**
      * @param _aABI Address of aABI ERC20 contract.
      * @param _ABI Address of ABI ERC20 contract.
@@ -81,5 +84,6 @@ contract AbachiBridge is Ownable {
         );
 
         require(ABI.transfer(_recipient, _amount), "Failed to transfer ABI");
+        emit Swap(_recipient, _amount);
     }
 }
