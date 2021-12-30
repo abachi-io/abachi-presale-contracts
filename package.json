@@ -35,11 +35,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abachi-io/abachiContracts.git"
+    "url": "git+https://github.com/abachi-io/abachi-presale-contracts.git"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/abachi-io/abachiContracts/issues"
+    "url": "https://github.com/abachi-io/abachi-presale-contracts/issues"
   },
-  "homepage": "https://github.com/abachi-io/abachiContracts#readme"
+  "homepage": "https://github.com/abachi-io/abachi-presale-contracts#readme"
 }
